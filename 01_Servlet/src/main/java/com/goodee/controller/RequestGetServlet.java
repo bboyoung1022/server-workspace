@@ -88,8 +88,24 @@ public class RequestGetServlet extends HttpServlet {
 		if(gender == null) {
 			out.println("선택하지 않았습니다.");
 		} else {
-			out.print(gender.equals(m));
+			out.print(gender.equals("m") ? "남자" : "여자");
 		}
+		
+		out.print("좋아하는 음식은 ");
+		if(foods == null) {
+			out.println("좋아하는 음식이 없습니다.");
+		} else {
+			out.print("<ul>");
+			for(int i=0; i<foods.length; i++) {
+				out.println("<li>" + foods[i] + "<li>" );
+			}
+			out.print("</ul");
+		}
+		out.println("</body>");
+		out.println("</html>");
+		
+		out.flush();
+
 	}
 
 	/**
