@@ -1,6 +1,8 @@
 package com.goodee.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +28,7 @@ public class RequestGetServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("서블릿 테스트");
+		//System.out.println("서블릿 테스트");
 		
 		/*
 		 * - Get방식으로 요청시 해당 메서드(doGet)가 호출됨
@@ -39,6 +41,55 @@ public class RequestGetServlet extends HttpServlet {
 		 * 		> request.getParameterValues("키"); => String[] (value값이 배열에 담겨서 전달됨)
 		 * 
 		 */
+		
+		String name = request.getParameter("name"); //이름 추출
+		String gender = request.getParameter("gender"); //성별 추출
+		int age = Integer.parseInt(request.getParameter("age")); //나이추출, int로 형변환해야함.
+		String city = request.getParameter("city");
+		double height = Double.parseDouble(request.getParameter("height"));
+		
+		//체크박스와 같은 복수 개의 값들을 추출하고자 할 때
+		String foods[]= request.getParameterValues("food"); //좋아하는 음식 추출
+		
+		System.out.println("name : " + name);
+		System.out.println("gender : " + gender);
+		System.out.println("age : " + age);
+		System.out.println("city : " + city);
+		System.out.println("height : " + height);
+		
+		if(foods == null) {
+			System.out.println("좋아하는 음식 없음");
+		} else {
+			System.out.println("food : " + String.join("/", foods)); //foods를 /로 분리
+		}
+		
+		/* 위의 요청처리 후 클라이언트로 응답할 정보를 가지고 응답페이지를 만들어서 전송하기
+		 * 즉, 여기 자바코드 내에 사용자가 보게 될 응답 HTML구문 작성하여 응답함.
+		 * 
+		 * 장점 : JAVA코드 내에 작성하기 때문에 자바내에서 반복문이나 조건문, 유용한 매서드 등을 바로 활용할 수 있음.
+		 * 단점 : HTML 태그와 JAVA코드가 섞이기 때문에 복잡해짐. HTML코드를 수정할 경우 결국 자바코드를 수정하는 것과 같음.
+		 * 		즉, 서버를 재실행해야함.
+		 */
+		 // - response 객체를 이용해서 사용자에게 HTML로 전달함.
+		 // 1) 앞으로 응답할 문서의 인코딩과 문서타입 설정
+		response.setContentType("text/html; charset=UTF-8");
+		//	2) 응답하고자 하는 사용자(요청했던 사용자)와의 스트림(클라이언트와의 통로) 생성
+		PrintWriter out = response.getWriter();
+		//	3) 스트림을 통해서 응답 HTML구문을 한줄씩 출력
+		out.println("<html>");
+		out.println("<body>");
+		out.println("");
+		out.println("<h1>개인정보 응답화면<h1>");
+		out.println(name + "님은");
+		out.print(age + "살이며,");
+		out.print(city + "에 살며");
+		out.print("키는" + height + "cm 입니다.");
+		out.print("성별은");
+		if(gender == null) {
+			out.println("선택하지 않았습니다.");
+		} else {
+			out.print(gender.equals(m));
+		}
 	}
 
 	/**
