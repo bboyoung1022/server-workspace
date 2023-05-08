@@ -80,7 +80,7 @@ public class RequestGetServlet extends HttpServlet {
 		out.println("<body>");
 		out.println("");
 		out.println("<h1>개인정보 응답화면<h1>");
-		out.println(name + "님은");
+		out.println(name + "님은 ");
 		out.print(age + "살이며,");
 		out.print(city + "에 살며");
 		out.print("키는" + height + "cm 입니다.");
