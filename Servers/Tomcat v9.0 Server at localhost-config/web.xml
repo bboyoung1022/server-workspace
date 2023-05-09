@@ -120,7 +120,15 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
-
+	<servlet>
+		<servlet-name>HiServlet</servlet-name>
+		<servlet-class>ex02_urlmapping.HiServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>HiServlet</servlet-name>
+		<url-pattern>/Hi</url-pattern>
+	</servlet-mapping>
 
   <!-- The JSP page compiler and execution servlet, which is the mechanism  -->
   <!-- used by Tomcat to support JSP pages.  Traditionally, this servlet    -->
