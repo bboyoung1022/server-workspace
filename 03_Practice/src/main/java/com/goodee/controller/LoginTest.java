@@ -9,31 +9,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.jasper.tagplugins.jstl.core.If;
-import org.eclipse.jdt.internal.compiler.env.IRecordComponent;
 
-/**
- * Servlet implementation class LoginTest
- */
+
 @WebServlet("/loginTest")
-public class loginTest extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+public class LoginTest extends HttpServlet {
     /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public loginTest() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * 
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+	private static final long serialVersionUID = 1L;
+	public void init() {
+        System.out.println("init 메서드 호출");
+    }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -54,15 +40,15 @@ public class loginTest extends HttpServlet {
 			out.print("<html>");
 			out.print("<body>");
 			out.print(id + "님!! 로그인 하셨습니다.");
-			out.print("<body>");
+			out.print("</body>");
 			out.print("</html>");
 		} else {
 			out.print("<html>");
 			out.print("<body>");
 			out.print("아이디를 입력하세요!!!");
 			out.print("<br>");
-			out.print("<a href='http://localhost:8090/03_Practice/test01/login.html'> 로그인 창으로 이동 </a>");
-			out.print("<body>");
+			out.print("<a href='http://localhost:8099/03_Practice/test01/login.html'> 로그인 창으로 이동 </a>");
+			out.print("</body>");
 			out.print("</html>");
 		}
 	}
