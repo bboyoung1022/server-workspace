@@ -26,5 +26,23 @@
 		<button>배열전송</button>
 	</form>
 
+	<form action="/01_Servlet/GetServlet">
+		<label for="model">모델명</label>
+		<input type="text" id="model" name="model" placeholder="모델명">
+		<label for="price">가격</label>
+		<input type="number" id="price" name="price" placeholder="가격(원)">
+		<input type="submit" value="파라미터 전송(GET)">
+	
+	</form>
+	<br><br>
+		<form action="/01_Servlet/PostServlet" method="post">
+		<label for="model">모델명</label>
+		<input type="text" id="model" name="model" placeholder="모델명">
+		<label for="price">가격</label>
+		<input type="number" id="price" name="price" placeholder="가격(원)">
+		<input type="submit" value="파라미터 전송(GET)">
+	
+	</form>
+
 </body>
 </html>
