@@ -15,7 +15,7 @@ import org.apache.catalina.startup.Tomcat.ExistingStandardWrapper;
 /**
  * Servlet implementation class ConfirmController
  */
-@WebServlet("/Confirm.do")
+@WebServlet("/confirm.do")
 public class ConfirmController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -41,6 +41,7 @@ public class ConfirmController extends HttpServlet {
 		 * 		request.getParameterValues("키") : [Value값, Value값, Value값 ...] = String[]타입  
 		 * 		공통점 : 만일 키값이 존재하지 않을 경우 null반환함.
 		 */
+		request.setCharacterEncoding("utf-8");
 		
 		//주문자 정보 추출
 		String userName = request.getParameter("user_name");

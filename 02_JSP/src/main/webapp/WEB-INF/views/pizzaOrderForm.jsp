@@ -50,11 +50,11 @@
                     <th>피자</th>
                     <td>
                         <select name="pizza">
-                            <option>콤비네이션 피자</option>
-                            <option>치즈 피자</option>
-                            <option>포테이토 피자</option>
-                            <option>고구마 피자</option>
-                            <option>불고기 피자</option>
+                            <option>콤비네이션피자</option>
+                            <option>치즈피자</option>
+                            <option>포테이토피자</option>
+                            <option>고구마피자</option>
+                            <option>불고기피자</option>
                         </select>
                     </td>
                 </tr>
