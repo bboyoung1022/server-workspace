@@ -43,6 +43,9 @@ public class WelcomeServlet extends HttpServlet {
 		case "/02_JSP/jsp/include" :	
 			request.getRequestDispatcher("/WEB-INF/views/03_includeDirective.jsp").forward(request, response);
 			break;
+		case "/02_JSP/jsp/order" :
+			request.getRequestDispatcher("/WEB-INF/views/pizzaOrderForm.jsp").forward(request, response);
+			break;
 		}
 	}
 	/**
