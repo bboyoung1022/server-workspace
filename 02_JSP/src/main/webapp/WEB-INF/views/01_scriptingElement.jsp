@@ -43,8 +43,11 @@
 			<li><%= s%></li>
 		<% } %>	
 	</ol>
-
-
-
+	<%!
+		public void test(){
+		System.out.println("선언문 테스트");
+	}
+	%>
+	<% test(); %>
 </body>
 </html>

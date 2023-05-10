@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class WelcomeServlet
  */
-@WebServlet("/script")
+@WebServlet("/jsp/*") // http://localhost:8099/02_JSP/jsp/로 시작하는 모든 요청(*)을 처리 
 public class WelcomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,9 +27,24 @@ public class WelcomeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("/WEB-INF/views/01_scriptingElement.jsp").forward(request, response);;
+		//요청된 URL을 String 변수 url에 담는다.
+		//URL+URN=URI
+		String url = request.getRequestURI().toString();
+		System.out.println(url);
+		
+		//url변수의 값에 따라 forward를 분기 처리한다.
+		switch(url) {
+		case "/02_JSP/jsp/script" :
+			request.getRequestDispatcher("/WEB-INF/views/01_scriptingElement.jsp").forward(request, response);
+			break;
+		case "/02_JSP/jsp/directive" :	
+			request.getRequestDispatcher("/WEB-INF/views/02_pageDirective.jsp").forward(request, response);
+			break;
+		case "/02_JSP/jsp/include" :	
+			request.getRequestDispatcher("/WEB-INF/views/03_includeDirective.jsp").forward(request, response);
+			break;
+		}
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
