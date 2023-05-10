@@ -14,6 +14,7 @@
 		Servlet(자바코드)에서 응답화면(HTML)을 구현했던 복잡함을 보다 간단하게 해결 가능함.<br>
 		=> JSP의 가장 큰 장점은 Servlet에서는 요청처리(비즈니스로직)에만 집중하고<br>
 		응답화면 만들기(프리젠테이션로직)는 JSP에서 집중하게 끔 분리할 수 있다는 것. 
+		JSP/Servlet을 해석하기 위해서는 Tomcat과 같은 WAS(Web Application Server)가 필요함. => main 메서드 없이 동작가능
 	</p>
 	<hr>
 	<h2>>>JSP Element 표현법</h2>
