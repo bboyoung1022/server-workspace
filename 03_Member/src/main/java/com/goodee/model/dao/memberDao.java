@@ -53,18 +53,25 @@ public class memberDao {
 				list.add(m);
 			}
 		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {
+			
 				rset.close();
 				pstmt.close();
 				conn.close();
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		
+		
+		
 		
 		return list;
 	}
